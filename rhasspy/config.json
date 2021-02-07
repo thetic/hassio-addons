@@ -15,19 +15,17 @@
         "share:rw",
         "ssl"
     ],
+    "ingress": true,
+    "panel_icon": "mdi:text-to-speech",
     "options": {
         "profile_dir": "/share/rhasspy/profiles",
         "profile_name": "en",
-        "ssl": false,
-        "certfile": "cert",
-        "keyfile": "key",
-        "asoundrc": "",
-        "http_root": ""
+        "asoundrc": ""
     },
     "audio": true,
     "ports": {
-        "12101/tcp": 12101,
-        "12333/udp": 12333
+        "12101/tcp": null,
+        "12333/udp": null
     },
     "ports_description": {
         "12101/tcp": "Rhasspy Web UI + API",
@@ -36,12 +34,7 @@
     "schema": {
         "profile_dir": "str",
         "profile_name": "str",
-        "ssl": "bool",
-        "certfile": "match(^[^/].*)",
-        "keyfile": "match(^[^/].*)",
-        "asoundrc": "str",
-        "http_root": "str"
+        "asoundrc": "str"
     },
-    "homeassistant_api": true,
-    "webui": "[PROTO:ssl]://[HOST]:[PORT:12101]/"
+    "homeassistant_api": true
 }

@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Start NGINX service
+# ==============================================================================
+
+# Wait for Rhasspy to start before continuing
+bashio::net.wait_for 12101
+
+bashio::log.info "Starting Nginx..."
+exec nginx
